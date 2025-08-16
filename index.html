@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Architecture and Interior Design - by Nieves Calvo</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="description" content="Nieves Calvo - Architect | Interior Designer | Artist | Creative | Explorer. Worked for TEN architects, ASA, iCrave and HBA.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Architecture and Interior Design - by Nieves Calvo">
+    <meta property="og:description" content="Nieves Calvo - Architect | Interior Designer | Artist | Creative | Explorer. Worked for TEN architects, ASA, iCrave and HBA.">
+    <meta property="og:site_name" content="Nieves Calvo">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGLJ6PWKJV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JGLJ6PWKJV');
+    </script>
+    
+    <!-- Estilos para replicar exactamente el diseño original -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            color: rgb(51, 65, 85);
+            background: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            line-height: 1.85714285714286;
+            font-weight: 400;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Smooth scrolling para toda la página */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .ast-container {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        #primary {
+            width: 100%;
+            margin: 4em 0;
+        }
+        
+        .entry-content {
+            clear: both;
+        }
+        
+        /* Columnas originales de WordPress */
+        .wp-block-columns {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: normal;
+        }
+        
+        .wp-block-column {
+            flex-basis: 0;
+            flex-grow: 1;
+            min-width: 0;
+            padding-right: 3px !important;
+        }
+        
+        .wp-block-column:last-child {
+            padding-right: 0 !important;
+        }
+        
+        .separacion {
+            padding-top: 15px;
+            padding-bottom: 2px;
+        }
+        
+        /* Estilos del header personal */
+        .header-personal .wp-block-column:first-child {
+            padding-right: 5px;
+        }
+        
+        .wp-block-heading {
+            margin-top: 0;
+            margin-right: var(--wp--preset--spacing--20, 1.5rem);
+            font-style: normal;
+            font-weight: 100;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgb(30, 41, 59);
+            font-size: 1.7em;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            clear: both;
+        }
+        
+        p {
+            margin-bottom: 1.75em;
+        }
+        
+        .has-text-align-center {
+            text-align: center;
+        }
+        
+        .portfolio-title {
+            font-style: normal;
+            font-weight: 100;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            width: 100% !important;
+            display: block !important;
+        }
+        
+        /* Imagen principal */
+        .wp-block-image img {
+            height: auto;
+            max-width: 100%;
+            vertical-align: middle;
+            border: 0;
+        }
+        
+        /* Estilos para proyectos */
+        .project-section {
+            padding-top: 15px;
+            padding-bottom: 2px;
+        }
+        
+        .wp-block-cover {
+            position: relative;
+            background-size: cover;
+            background-position: center center;
+            min-height: 515px; /* Default vertical layout */
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Specific height variants for each project */
+        .wp-block-cover.height-515 {
+            min-height: 515px;
+        }
+        
+        .wp-block-cover.height-275 {
+            min-height: 275px;
+        }
+        
+        .wp-block-cover.height-266 {
+            min-height: 266px;
+        }
+        
+        .wp-block-cover.height-260 {
+            min-height: 260px;
+        }
+        
+        .wp-block-cover.height-230 {
+            min-height: 230px;
+        }
+        
+        .wp-block-cover.height-240 {
+            min-height: 240px;
+        }
+        
+        .wp-block-cover.height-380 {
+            min-height: 380px;
+        }
+        
+        /* Eliminar espacio entre project-section y project-title */
+        .project-section {
+            margin-bottom: 0 !important;
+        }
+        
+        .project-title {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        
+        .wp-block-cover__image-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+        
+        .wp-block-cover__inner-container {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: left;
+            padding: 1em;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        
+        .wp-block-cover__inner-container p {
+            text-align: left;
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .wp-block-columns {
+                flex-direction: column;
+            }
+            
+            .header-personal .wp-block-column:first-child {
+                padding-right: 0;
+                margin-bottom: 2em;
+            }
+            
+            .wp-block-cover {
+                min-height: 300px;
+            }
+        }
+        
+        @media (max-width: 544px) {
+            .ast-container {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            
+            #primary {
+                margin: 2em 0;
+            }
+        }
+        
+        /* Estados de carga */
+        .lazyload {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .lazyloaded {
+            opacity: 1;
+        }
+        
+        /* Placeholders para imágenes */
+        .image-placeholder {
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        /* Contenedor principal con max-width como el original */
+        .site-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* Espaciado entre secciones de proyectos */
+        .wp-block-columns {
+            padding-top: 15px;
+            padding-right: 0px;
+            padding-bottom: 2px;
+            padding-left: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1.75em;
+        }
+
+        /* Gap entre columnas individuales */
+        .wp-block-column {
+            flex-grow: 1;
+            min-width: 0;
+            padding-right: 8px; /* Espacio entre columnas */
+        }
+
+        .wp-block-column:last-child {
+            padding-right: 0; /* Sin padding en la última columna */
+        }
+
+        /* Responsivo para móvil */
+        @media (max-width: 781px) {
+            .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+                flex-basis: 100% !important;
+                padding-right: 0;
+            }
+        }
+
+        /* Desktop behavior */
+        @media (min-width: 782px) {
+            .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+                flex-basis: 0;
+                flex-grow: 1;
+            }
+        }
+
+        /* Títulos de proyectos */
+        .project-title {
+            margin-top: 0.2em;
+            margin-bottom: 1.5em;
+            color: rgb(30, 41, 59);
+            font-size: 16px;
+            line-height: 1.3;
+            text-align: left;
+            padding-left: 5px;
+        }
+        
+        /* Ocultar títulos en móvil */
+        @media (max-width: 768px) {
+            .project-title {
+                display: none;
+            }
+        }
+
+        /* Estilos para los covers de proyecto */
+        .wp-block-cover {
+            position: relative;
+            min-height: 515px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .wp-block-cover__image-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .wp-block-cover__inner-container {
+            position: relative;
+            z-index: 3;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            opacity: 0 !important; /* Oculto por defecto - forzamos con !important */
+            transition: opacity 0.3s ease;
+            display: block;
+        }
+
+        /* Background overlay - inicialmente transparente */
+        .wp-block-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0);
+            z-index: 2;
+            transition: background 0.3s ease;
+        }
+
+        /* Efectos hover - igual que el original */
+        .wp-block-cover:hover::before {
+            background: rgba(0, 0, 0, 0.41);
+        }
+
+        .wp-block-cover:hover .wp-block-cover__inner-container {
+            opacity: 1 !important;
+        }
+
+        /* Reducir gap entre columnas a la mitad */
+        .wp-block-columns {
+            gap: 2.5px;
+        }
+        
+        /* Hidden project class removed - all projects now visible */
+        
+        /* Hide fullscreen modal completely */
+        .fullscreen-modal {
+            display: none !important;
+        }
+
+        /* Mobile Instagram-style grid layout */
+        @media (max-width: 768px) {
+            /* Hide project titles on mobile */
+            .project-title {
+                display: none;
+            }
+            
+            /* Convert project sections to grid layout */
+            .project-section {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr !important;
+                gap: 2px !important;
+                margin-bottom: 2px !important;
+            }
+            
+            .project-section .wp-block-column {
+                flex: none !important;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+            
+            .project-section .wp-block-cover {
+                height: calc((100vw - 16px) / 3) !important; /* Square aspect ratio */
+                min-height: 120px !important;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+            
+            .project-section .wp-block-cover:active {
+                transform: scale(0.95);
+            }
+            
+            .project-section .wp-block-cover__image-background {
+                object-fit: cover !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+            
+            .project-section .wp-block-cover__inner-container {
+                display: none !important; /* Hide text overlays on mobile */
+            }
+            
+            /* Fullscreen modal for image viewing */
+            .fullscreen-modal {
+                display: none !important;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.9);
+                z-index: 9999;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            
+            .fullscreen-modal.active {
+                display: flex !important;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .fullscreen-modal .modal-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 90vw;
+                max-height: 90vh;
+            }
+            
+            .fullscreen-modal .modal-text {
+                color: white;
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 18px;
+                line-height: 1.4;
+                font-weight: 300;
+                max-width: 80vw;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            }
+            
+            .fullscreen-modal .modal-text h3 {
+                margin: 0 0 10px 0;
+                font-size: 22px;
+                font-weight: 400;
+                color: white;
+            }
+            
+            .fullscreen-modal img {
+                max-width: 90vw;
+                max-height: calc(90vh - 100px);
+                object-fit: contain;
+            }
+            
+            .fullscreen-modal .close-btn {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                font-size: 30px;
+                cursor: pointer;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                z-index: 10000;
+            }
+            
+            /* Error handling for project images */
+            .wp-block-cover__image-background.image-error {
+                opacity: 0.3;
+                filter: grayscale(100%);
+            }
+            
+            /* Ensure modal appears above everything */
+            .fullscreen-modal {
+                backdrop-filter: blur(5px);
+            }
+            
+            /* Fix for image loading */
+            .project-section .wp-block-cover__image-background {
+                min-width: 100%;
+                min-height: 100%;
+            }
+            
+            /* About section mobile adjustments */
+            #about .wp-block-columns {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+            
+            #about .wp-block-column {
+                flex-basis: 100% !important;
+            }
+            
+            #about .wp-block-column:nth-child(2) {
+                text-align: center !important;
+            }
+            
+            #about .wp-block-column:nth-child(2) h2 {
+                font-size: 2em !important;
+                text-align: center !important;
+            }
+            
+            #about .wp-block-column:nth-child(2) div div {
+                font-size: 14px !important;
+            }
+        }
+        
+        /* Filter Tags Styles */
+        .portfolio-filters {
+            margin: 1.5em 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .filter-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 4px 6px;
+            background: #f8f9fa;
+            color: rgb(51, 65, 85);
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-radius: 20px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-tag:hover {
+            background: rgb(51, 65, 85);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .filter-tag.active {
+            background: rgb(51, 65, 85);
+            color: white;
+            box-shadow: 0 2px 8px rgba(51, 65, 85, 0.2);
+        }
+        
+        /* Project filtering animations */
+        .project-section {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        .project-section.filtered-out {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            position: absolute;
+            z-index: -1;
+        }
+        
+        /* Mobile filter adjustments */
+        @media (max-width: 768px) {
+            .portfolio-filters {
+                margin: 1em 0;
+                padding: 0 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+            }
+            
+            .filter-tag {
+                font-size: 0.7em;
+                padding: 4px 8px;
+                margin: 1px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
+        
+        /* Extra small mobile screens */
+        @media (max-width: 480px) {
+            .filter-tag {
+                font-size: 0.65em;
+                padding: 3px 6px;
+                letter-spacing: 0.3px;
+            }
+        }
+        
+        /* Show RUNRUNRUN project (position 8) */
+        
+        /* Footer visibility fix for mobile */
+        footer {
+            position: relative !important;
+            z-index: 10 !important;
+            clear: both !important;
+            margin-top: 20px !important;
+        }
+        
+        @media (max-width: 768px) {
+            /* Asegurar que el body tenga el espacio completo */
+            body {
+                min-height: 100vh !important;
+                padding-bottom: 50px !important; /* Espacio para el footer */
+            }
+            
+            /* Contenedor principal con espacio suficiente */
+            #content {
+                padding-bottom: 60px !important; /* Espacio amplio para el footer */
+            }
+            
+            /* Footer completamente visible y más pequeño */
+            footer {
+                position: relative !important;
+                z-index: 10 !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                background: #f8f8f8 !important;
+                padding: 15px 0 !important; /* Padding reducido */
+                text-align: center !important;
+                color: rgb(51, 65, 85) !important;
+                font-size: 12px !important; /* Texto más pequeño */
+                margin-top: 20px !important; /* Margin reducido */
+                width: 100% !important;
+                clear: both !important;
+                box-sizing: border-box !important;
+            }
+            
+            footer .ast-container {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                padding: 0 10px !important; /* Padding reducido */
+                margin: 0 auto !important;
+                max-width: 100% !important;
+            }
+            
+            footer p {
+                margin: 0 !important;
+                display: block !important;
+                visibility: visible !important;
+                padding: 0 !important; /* Sin padding extra */
+                line-height: 1.2 !important;
+            }
+            
+            /* Asegurar espacio extra al final del contenido */
+            .entry-content {
+                padding-bottom: 30px !important;
+                margin-bottom: 20px !important;
+            }
+            
+            /* Contact section con más espacio inferior */
+            #contact {
+                margin-bottom: 20px !important;
+                padding-bottom: 15px !important;
+            }
+            
+            /* Instagram section más compacto */
+            .has-text-align-center:last-of-type {
+                margin-bottom: 20px !important;
+                padding-bottom: 10px !important;
+            }
+        }
+    </style>
+</head>
+<body class="home page-template-default page page-id-5 ast-desktop ast-plain-container ast-no-sidebar astra-4.1.6 ast-single-post ast-inherit-site-logo-transparent ast-hfb-header ast-normal-title-enabled">
+
+    <div id="content" class="site-content">
+        <div class="ast-container site-container">
+            <div id="primary" class="content-area primary">
+                <main id="main" class="site-main">
+                    <article class="post-5 page type-page status-publish has-post-thumbnail ast-article-single" id="post-5">
+                        <div class="entry-content clear">
+                                            
+                            <!-- Título Portfolio - Réplica exacta -->
+                            <h2 class="wp-block-heading has-text-align-center portfolio-title" style="font-size: 2.5em; font-weight: 300; letter-spacing: 2px; margin-bottom: 0.5em;">NIEVES CALVO</h2>
+                            <p class="has-text-align-center" style="font-size: 0.9em; color: rgb(102, 102, 102); margin-bottom: 1em;">creative direction | interior design | spatial experience | art direction</p>
+                            <div class="has-text-align-center" style="margin: 2em 0;">
+                                <a href="#portfolio" style="text-decoration: none; color: rgb(51, 65, 85); margin: 0 15px; font-size: 0.9em; font-weight: 500;">PORTFOLIO</a>
+                                <a href="#about" style="text-decoration: none; color: rgb(51, 65, 85); margin: 0 15px; font-size: 0.9em; font-weight: 500;">ABOUT</a>
+                                <a href="#contact" style="text-decoration: none; color: rgb(51, 65, 85); margin: 0 15px; font-size: 0.9em; font-weight: 500;">CONTACT</a>
+                            </div>
+
+                            <!-- Portfolio Filter Tags - TEMPORALMENTE OCULTO -->
+                            <div class="portfolio-filters" style="display: none;">
+                                <span class="filter-tag active" data-category="all">All</span>
+                                <span class="filter-tag" data-category="luxury-hospitality">Luxury</span>
+                                <span class="filter-tag" data-category="corporate-financial">Corporate</span>
+                                <span class="filter-tag" data-category="gastronomy-culture">Gastronomy</span>
+                                <span class="filter-tag" data-category="innovation-public">Innovation</span>
+                                <span class="filter-tag" data-category="design-experimental">Design</span>
+                            </div>
+
+                            <!-- ROMOLA - Réplica exacta -->
+                            <div id="portfolio" class="wp-block-columns project-section" data-category="gastronomy-culture">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-515">
+                                        <img decoding="async" width="450" height="604" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="ROMOLA Project" 
+                                             src="assets/images/projects/romola/romola_webp.webp"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>1st prize – Europe Best Restaurant and Bar Design Award 2019<br>Seleccionat FAD Interiorisme 2018</p>
+                                            <p>Romola, Restaurant in Madrid<br>With Andres Jaque – Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-515">
+                                        <img decoding="async" width="450" height="604" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="ROMOLA Project 2" 
+                                             src="assets/images/projects/romola/3-ROMOLA.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>1st prize – Europe Best Restaurant and Bar Design Award 2019<br>Seleccionat FAD Interiorisme 2018</p>
+                                            <p>Romola, Restaurant in Madrid<br>With Andres Jaque – Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-515">
+                                        <img decoding="async" width="450" height="604" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="ROMOLA Project 3" 
+                                             src="assets/images/projects/romola/2-ROMOLA.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>1st prize – Europe Best Restaurant and Bar Design Award 2019<br>Seleccionat FAD Interiorisme 2018</p>
+                                            <p>Romola, Restaurant in Madrid<br>With Andres Jaque – Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Romola, Restaurant in Madrid<br>With Andres Jaque – Office for Political Innovation</p>
+
+                            <!-- Chase Sapphire Lounges - Réplica exacta -->
+                            <div class="wp-block-columns project-section" data-category="corporate-financial">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-266">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Chase Sapphire Lounge Boston" 
+                                             src="assets/images/projects/chase-sapphire-lounges/1_Chase_Sapphire_Lounge_Boston.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>J. P. Morgan Chase Sapphire airport lounge<br>With ICRAVE NY/Miami</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-266">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Chase Sapphire Lounge Las Vegas" 
+                                             src="assets/images/projects/chase-sapphire-lounges/2_Chase_Sapphire_Lounge_LasVegas.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>J. P. Morgan Chase Sapphire airport lounge<br>With ICRAVE NY/Miami</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-266">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Chase Sapphire Lounge JFK" 
+                                             src="assets/images/projects/chase-sapphire-lounges/3_Chase_Sapphire_Lounge_JFK.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>J. P. Morgan Chase Sapphire airport lounge<br>With ICRAVE NY/Miami</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">J. P. Morgan Chase Sapphire airport lounges<br>With ICRAVE NY/Miami</p>
+
+                            <!-- Burj Azizi Dubai Project -->
+                            <div class="wp-block-columns project-section" data-category="luxury-hospitality">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Burj Azizi Dubai Project" 
+                                             src="assets/images/projects/burj-azizi-dubai/Dubai 1.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Burj Azizi - Residences & amenities<br>World's Second Tallest Building, in Dubai (UAE)<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Burj Azizi Dubai Project 2" 
+                                             src="assets/images/projects/burj-azizi-dubai/dubai 2.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Burj Azizi - Residences & amenities<br>World's Second Tallest Building, in Dubai (UAE)<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Burj Azizi Dubai Project 3" 
+                                             src="assets/images/projects/burj-azizi-dubai/dubai 3.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Burj Azizi - Residences & amenities<br>World's Second Tallest Building, in Dubai (UAE)<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Burj Azizi - Residences & amenities - World's Second Tallest Building, in Dubai (UAE)<br>With HBA MIAMI</p>
+
+                            <!-- Ritz-Carlton Aruba Project -->
+                            <div class="wp-block-columns project-section" data-category="luxury-hospitality">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Ritz-Carlton Aruba 1" 
+                                             src="assets/images/projects/ritz-carlton-aruba/Ritz Carlton Aruba 1.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Ritz-Carlton Aruba<br>Renovation of the public areas<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Ritz-Carlton Aruba 2" 
+                                             src="assets/images/projects/ritz-carlton-aruba/Ritz Carlton Aruba 2.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Ritz-Carlton Aruba<br>Renovation of the public areas<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Ritz-Carlton Aruba 3" 
+                                             src="assets/images/projects/ritz-carlton-aruba/Ritz Carlton Aruba 3.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Ritz-Carlton Aruba<br>Renovation of the public areas<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Ritz-Carlton Aruba, renovation of the public areas<br>With HBA MIAMI</p>
+
+                            <!-- XU Collective Trade Show Project -->
+                            <div class="wp-block-columns project-section" data-category="design-experimental">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="BDNY Trade Show 1" 
+                                             src="assets/images/projects/xu-collective-bdny/BDNY 1.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>BDNY/NEWH Trade Show for XU Collective<br>Furniture design NYC, Miami, Chicago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="BDNY Trade Show 2" 
+                                             src="assets/images/projects/xu-collective-bdny/BDNY 2.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>BDNY/NEWH Trade Show for XU Collective<br>Furniture design NYC, Miami, Chicago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="BDNY Trade Show 3" 
+                                             src="assets/images/projects/xu-collective-bdny/BDNY 3.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>BDNY/NEWH Trade Show for XU Collective<br>Furniture design NYC, Miami, Chicago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">BDNY/NEWH Trade Show for XU Collective<br>Furniture design NYC, Miami, Chicago</p>
+
+                            <!-- Hilton Punta Cana Project -->
+                            <div class="wp-block-columns project-section" data-category="luxury-hospitality">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Hilton Punta Cana Club Lounge" 
+                                             src="assets/images/projects/hilton-punta-cana/Hilton Club Lounge.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Hilton Punta Cana (DR)<br>Club lounge and family guestrooms<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Hilton Punta Cana Guestroom" 
+                                             src="assets/images/projects/hilton-punta-cana/K hilton.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Hilton Punta Cana (DR)<br>Club lounge and family guestrooms<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Hilton Presidential Suite" 
+                                             src="assets/images/projects/hilton-punta-cana/presidential hilton.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Hilton Punta Cana (DR)<br>Club lounge and family guestrooms<br>With HBA MIAMI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Hilton Punta Cana (DR), club lounge and family guestrooms<br>With HBA MIAMI</p>
+
+                            <!-- Runrunrun Project -->
+                            <div class="wp-block-columns project-section" data-category="gastronomy-culture">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Runrunrun Project" 
+                                             src="assets/images/projects/runrunrun/1runrunrun.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Nominated to the Mies van der Rohe Awards 2021</p>
+                                            <p>Runrunrun, Restaurant in Madrid<br>With Andrés Jaque, Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Runrunrun Project 2" 
+                                             src="assets/images/projects/runrunrun/2runrunrun-1.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Nominated to the Mies van der Rohe Awards 2021</p>
+                                            <p>Runrunrun, Restaurant in Madrid<br>With Andrés Jaque, Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Runrunrun Project 3" 
+                                             src="assets/images/projects/runrunrun/3runrunrun.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Nominated to the Mies van der Rohe Awards 2021</p>
+                                            <p>Runrunrun, Restaurant in Madrid<br>With Andrés Jaque, Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Runrunrun, Restaurant in Madrid<br>With Andrés Jaque, Office for Political Innovation</p>
+
+                            <!-- Beer Tap Project -->
+                            <div class="wp-block-columns project-section" data-category="corporate-financial">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-380">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Beer Tap Project" 
+                                             src="assets/images/projects/beer-tap-chase/1_beer_tap.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Beer tap for the J. P: Morgan Chase Sapphire airport lounges guidelines<br>With ICRAVE NY/Miami</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-380">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Beer Tap Project 2" 
+                                             src="assets/images/projects/beer-tap-chase/2_beer_tap.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Beer tap for the J. P: Morgan Chase Sapphire airport lounges guidelines<br>With ICRAVE NY/Miami</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-380">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Beer Tap Project 3" 
+                                             src="assets/images/projects/beer-tap-chase/3_beer_tap.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Beer tap for the J. P: Morgan Chase Sapphire airport lounges guidelines<br>With ICRAVE NY/Miami</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Beer tap for the J. P: Morgan Chase Sapphire airport lounges guidelines<br>With ICRAVE NY/Miami</p>
+
+                            <!-- NASA - Réplica exacta -->
+                            <div class="wp-block-columns project-section" data-category="innovation-public">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-275">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="NASA Project" 
+                                             src="assets/images/projects/nasa/3-NASA.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>NASA, Glenn Research Center in Cleveland With ASA and TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-275">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="NASA Project 2" 
+                                             src="assets/images/projects/nasa/1-NASA.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>NASA, Glenn Research Center in Cleveland With ASA and TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-275">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="NASA Project 3" 
+                                             src="assets/images/projects/nasa/2-NASA.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>NASA, Glenn Research Center in Cleveland With ASA and TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">NASA, Glenn Research Center in Cleveland<br>With ASA and TEN Arquitectos</p>
+
+                            <!-- MRNY Community Center Project -->
+                            <div class="wp-block-columns project-section" data-category="innovation-public">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="MRNY Community Center Queens" 
+                                             src="assets/images/projects/mrny-community-center/MRNY 1.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>MRNY - Community Center<br>In Queens (NYC)<br>With ASA/TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="MRNY Community Center Design 2" 
+                                             src="assets/images/projects/mrny-community-center/MRNY 2.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>MRNY - Community Center<br>In Queens (NYC)<br>With ASA/TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="MRNY Community Center Design 3" 
+                                             src="assets/images/projects/mrny-community-center/MRNY 3.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>MRNY - Community Center<br>In Queens (NYC)<br>With ASA/TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">MRNY - Community Center in Queens (NYC)<br>With ASA/TEN Arquitectos</p>
+
+                            <!-- IED Updated -->
+                            <div class="wp-block-columns project-section" data-category="innovation-public">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="IED Project" 
+                                             src="assets/images/projects/ied-innovation-lab/1IED.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Best office design – T Spain Design Awards 2019 by The New York Times Style Magazine</p>
+                                            <p>IED Innovation Lab in Madrid<br>With Nacho Martin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="IED Project 2" 
+                                             src="assets/images/projects/ied-innovation-lab/2IED.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Best office design – T Spain Design Awards 2019 by The New York Times Style Magazine</p>
+                                            <p>IED Innovation Lab in Madrid<br>With Nacho Martin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="IED Project 3" 
+                                             src="assets/images/projects/ied-innovation-lab/3IED.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Best office design – T Spain Design Awards 2019 by The New York Times Style Magazine</p>
+                                            <p>IED Innovation Lab in Madrid<br>With Nacho Martin</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">IED Innovation Lab in Madrid<br>With Nacho Martin</p>
+
+                            <!-- TLC - Réplica exacta -->
+                            <div class="wp-block-columns project-section" data-category="innovation-public">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="TLC Project" 
+                                             src="assets/images/projects/tlc-nyc/3TLC.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Excellence in Design 2017 by the New York City Public Design Commission</p>
+                                            <p>Taxi and Limousine Commission of NYC<br>With ASA and TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="TLC Project 2" 
+                                             src="assets/images/projects/tlc-nyc/1TLC.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Excellence in Design 2017 by the New York City Public Design Commission</p>
+                                            <p>Taxi and Limousine Commission of NYC<br>With ASA and TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="TLC Project 3" 
+                                             src="assets/images/projects/tlc-nyc/2TLC.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Excellence in Design 2017 by the New York City Public Design Commission</p>
+                                            <p>Taxi and Limousine Commission of NYC<br>With ASA and TEN Arquitectos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Taxi and Limousine Commission of NYC<br>With ASA and TEN Arquitectos</p>
+
+                            <!-- Austin Pop-up Project -->
+                            <div class="wp-block-columns project-section" data-category="corporate-financial">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Austin Pop-up Project" 
+                                             src="assets/images/projects/austin-popup/2-Austin.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Pop up for JP Morgan Chase & Co Sapphire in Austin<br>With ICRAVE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Austin Pop-up Project 2" 
+                                             src="assets/images/projects/austin-popup/1-Austin.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Pop up for JP Morgan Chase & Co Sapphire in Austin<br>With ICRAVE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Austin Pop-up Project 3" 
+                                             src="assets/images/projects/austin-popup/3-Austin.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Pop up for JP Morgan Chase & Co Sapphire in Austin<br>With ICRAVE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Pop up for JP Morgan Chase & Co Sapphire in Austin<br>With ICRAVE</p>
+
+                            <!-- Rambla Climate House -->
+                            <div class="wp-block-columns project-section" data-category="design-experimental">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Rambla Climate House 2" 
+                                             src="assets/images/projects/rambla-climate-house/2RAMBLA.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Best Houses of 2022, by Archdaily<br>2022 Matcoam sustainability award</p>
+                                            <p>Rambla Climate House in Murcia<br>With Andrés Jaque, Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Rambla Climate House" 
+                                             src="assets/images/projects/rambla-climate-house/1RAMBLA.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Best Houses of 2022, by Archdaily<br>2022 Matcoam sustainability award</p>
+                                            <p>Rambla Climate House in Murcia<br>With Andrés Jaque, Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-230">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Rambla Climate House 3" 
+                                             src="assets/images/projects/rambla-climate-house/3rambla.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Best Houses of 2022, by Archdaily<br>2022 Matcoam sustainability award</p>
+                                            <p>Rambla Climate House in Murcia<br>With Andrés Jaque, Office for Political Innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Rambla Climate House in Murcia<br>With Andrés Jaque, Office for Political Innovation</p>
+
+                            <!-- Maria Mallo Pavilion -->
+                            <div class="wp-block-columns project-section" data-category="design-experimental">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Maria Mallo Pavilion 3" 
+                                             src="assets/images/projects/maria-mallo-pavilion/3MariaMallo.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Una arquitectura para ecosistemas emocionales diversos, pavilion in Madrid<br>With Maria Mallo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Maria Mallo Pavilion 2" 
+                                             src="assets/images/projects/maria-mallo-pavilion/2MariaMallo.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Una arquitectura para ecosistemas emocionales diversos, pavilion in Madrid<br>With Maria Mallo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-260">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Maria Mallo Pavilion 1" 
+                                             src="assets/images/projects/maria-mallo-pavilion/1MariaMallo.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Una arquitectura para ecosistemas emocionales diversos, pavilion in Madrid<br>With Maria Mallo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Una arquitectura para ecosistemas emocionales diversos, pavilion in Madrid<br>With María Mallo</p>
+
+                            <!-- Dream Hotel Project -->
+                            <div class="wp-block-columns project-section" data-category="luxury-hospitality">
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-240">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Dream Hotel Project" 
+                                             src="assets/images/projects/dream-hotel/1dream.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Dream hotel & The Wharf, in Miami<br>With ICRAVE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-240">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Dream Hotel Project 2" 
+                                             src="assets/images/projects/dream-hotel/2dream.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Dream hotel & The Wharf, in Miami<br>With ICRAVE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wp-block-column">
+                                    <div class="wp-block-cover height-240">
+                                        <img decoding="async" width="450" height="300" 
+                                             class="wp-block-cover__image-background" 
+                                             alt="Dream Hotel Project 3" 
+                                             src="assets/images/projects/dream-hotel/3dream.jpg"
+                                             style="object-fit: cover;">
+                                        <div class="wp-block-cover__inner-container">
+                                            <p>Dream hotel & The Wharf, in Miami<br>With ICRAVE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="project-title">Dream hotel & The Wharf, in Miami<br>With ICRAVE</p>
+
+                            <!-- About Section - 3 Blocks -->
+                            <div id="about" style="margin: 60px 0;">
+                                <!-- Bio Layout with 3 blocks of equal height -->
+                                <div class="wp-block-columns" style="gap: 40px; align-items: stretch; display: flex;">
+                                    <!-- Block 1: Profile Image -->
+                                    <div class="wp-block-column" style="flex-basis: 35%;">
+                                        <figure class="wp-block-image" style="margin: 0; height: 100%;">
+                                            <img decoding="async" 
+                                                 src="assets/images/profile/Nieves_Calvo_Bio_foto.jpg" 
+                                                 alt="Nieves Calvo Portrait" 
+                                                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                                        </figure>
+                                    </div>
+                                    
+                                    <!-- Block 2: Title + Biography Text -->
+                                    <div class="wp-block-column" style="flex-basis: 45%; display: flex; flex-direction: column; justify-content: center;">
+                                        <div style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                                            <h2 style="margin: 0 0 15px 0; font-size: 2.5em; font-weight: 300; color: #333; text-align: left;">NIEVES CALVO</h2>
+                                            
+                                            <div style="font-size: 16px; line-height: 1.6; color: #333; text-align: left;">
+                                                <p style="margin-bottom: 20px;">
+                                                    Founder and creative director of <strong>The Intangible Land</strong>, is an architect and interior designer focused on high-end residential and hospitality projects. Her work emphasizes attention to detail and sustainability, finding the perfect balance between new trends and timeless design.
+                                                </p>
+                                                
+                                                <p style="margin-bottom: 20px;">
+                                                    Currently living and working between Miami and Madrid, she has collaborated with firms such as <strong>ICRAVE</strong>—one of the top interior design firms in the industry, with clients including JPMorgan Chase & Co. and Sapphire—and <strong>HBA</strong>, the world's leading hospitality design firm, gaining experience with brands such as Ritz-Carlton and Hilton, among others.
+                                                </p>
+                                                
+                                                <p style="margin-bottom: 20px;">
+                                                    In 2018, she moved to New York City to join the teams of <strong>Enrique Norten</strong> and <strong>Andrea Steele Architecture</strong>, where the projects she contributed to received multiple awards, including recognition for excellence in design by the New York City Public Design Commission.
+                                                </p>
+                                                
+                                                <p style="margin-bottom: 0;">
+                                                    She studied and worked in Madrid (Spain) and Bordeaux (France), participating in international projects with some of the most renowned firms in the field—projects that received honors such as the 2018 FAD Interiorisme Award and a nomination for the Mies van der Rohe Awards.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Block 3: Company Logos -->
+                                    <div class="wp-block-column" style="flex-basis: 20%; display: flex; align-items: center;">
+                                        <figure class="wp-block-image" style="margin: 0; width: 100%;">
+                                            <img decoding="async" 
+                                                 src="assets/images/profile/logos_nc.jpg" 
+                                                 alt="Companies and Collaborations" 
+                                                 style="width: 100%; height: auto;">
+                                        </figure>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mobile responsive styles -->
+                                <style>
+                                    @media (max-width: 768px) {
+                                        #about .wp-block-columns {
+                                            flex-direction: column !important;
+                                            gap: 20px !important;
+                                        }
+                                        
+                                        #about .wp-block-column {
+                                            flex-basis: 100% !important;
+                                        }
+                                        
+                                        #about .wp-block-column:nth-child(1) figure {
+                                            height: 300px !important;
+                                        }
+                                        
+                                        #about .wp-block-column:nth-child(2) {
+                                            text-align: center !important;
+                                        }
+                                        
+                                        #about .wp-block-column:nth-child(2) h2 {
+                                            font-size: 2em !important;
+                                            text-align: center !important;
+                                        }
+                                        
+                                        #about .wp-block-column:nth-child(2) div div {
+                                            font-size: 14px !important;
+                                        }
+                                    }
+                                </style>
+                            </div>
+
+                            <!-- Contact Section -->
+                            <h2 id="contact" class="wp-block-heading has-text-align-center portfolio-title" style="margin-top: 2em;">contact</h2>
+                            <p class="has-text-align-center">hi@nievescalvo.com</p>
+                            <div class="has-text-align-center" style="margin-top: 20px;">
+                                <div style="display: inline-flex; align-items: center; gap: 10px;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity: 0.7;">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                                    </svg>
+                                    <span style="color: rgb(51, 65, 85); font-size: 16px;">@TheIntangible.Land</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: #f8f8f8; padding: 20px 0; text-align: center; color: rgb(51, 65, 85); font-size: 14px;">
+        <div class="ast-container">
+            <p>Copyright © <span id="current-year">2024</span> Nieves Calvo</p>
+        </div>
+    </footer>
+
+    <!-- Script para lazy loading básico -->
+    <script>
+        // Función simple para cargar imágenes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Actualizar año dinámicamente
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = currentYear;
+            }
+            
+            // Portfolio Filter Functionality
+            function initPortfolioFilters() {
+                const filterTags = document.querySelectorAll('.filter-tag');
+                const projectSections = document.querySelectorAll('.project-section');
+                
+                filterTags.forEach(tag => {
+                    tag.addEventListener('click', function() {
+                        const selectedCategory = this.getAttribute('data-category');
+                        
+                        // Update active state
+                        filterTags.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Filter projects
+                        projectSections.forEach(project => {
+                            const projectCategory = project.getAttribute('data-category');
+                            
+                            if (selectedCategory === 'all' || projectCategory === selectedCategory) {
+                                project.classList.remove('filtered-out');
+                                project.style.display = 'flex';
+                            } else {
+                                project.classList.add('filtered-out');
+                                // Delay hiding to allow animation
+                                setTimeout(() => {
+                                    if (project.classList.contains('filtered-out')) {
+                                        project.style.display = 'none';
+                                    }
+                                }, 300);
+                            }
+                        });
+                        
+                        // Also filter project titles
+                        const projectTitles = document.querySelectorAll('.project-title');
+                        projectTitles.forEach(title => {
+                            const nextProject = title.previousElementSibling;
+                            if (nextProject && nextProject.classList.contains('project-section')) {
+                                const projectCategory = nextProject.getAttribute('data-category');
+                                
+                                if (selectedCategory === 'all' || projectCategory === selectedCategory) {
+                                    title.style.display = 'block';
+                                } else {
+                                    title.style.display = 'none';
+                                }
+                            }
+                        });
+                    });
+                });
+            }
+            
+            // Initialize filters
+            initPortfolioFilters();
+            
+            // Crear modal para pantalla completa
+            const modal = document.createElement('div');
+            modal.className = 'fullscreen-modal';
+            modal.innerHTML = `
+                <button class="close-btn">&times;</button>
+                <div class="modal-content">
+                    <div class="modal-text" style="display: none;"></div>
+                    <img alt="Full screen image" style="display: none;">
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            const modalImg = modal.querySelector('img');
+            const closeBtn = modal.querySelector('.close-btn');
+            
+            // Cerrar modal
+            function closeModal() {
+                modal.classList.remove('active');
+                modalImg.style.display = 'none';
+                modalImg.src = '';
+                // Ocultar también el texto del modal
+                const modalText = modal.querySelector('.modal-text');
+                if (modalText) {
+                    modalText.style.display = 'none';
+                    modalText.textContent = '';
+                }
+                document.body.style.overflow = ''; // Restaurar scroll
+            }
+            
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Escape key para cerrar
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+            
+            // Funcionalidad para abrir imágenes en pantalla completa (solo en móvil)
+            function setupImageClickHandlers() {
+                const projectCovers = document.querySelectorAll('.project-section .wp-block-cover');
+                
+                projectCovers.forEach(cover => {
+                    cover.addEventListener('click', function(e) {
+                        // Solo activar en móvil
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            
+                            // Buscar la imagen dentro del cover
+                            const img = cover.querySelector('.wp-block-cover__image-background');
+                            if (img && img.src && !img.src.includes('data:') && img.complete && !img.classList.contains('image-error')) {
+                                // Extraer el texto del proyecto
+                                const textContainer = cover.querySelector('.wp-block-cover__inner-container');
+                                let projectText = '';
+                                if (textContainer) {
+                                    const textElements = textContainer.querySelectorAll('h2, h3, h4, h5, p');
+                                    projectText = Array.from(textElements)
+                                        .map(el => el.textContent.trim())
+                                        .filter(text => text.length > 0)
+                                        .join(' | ');
+                                }
+                                
+                                // Mostrar imagen y texto en el modal
+                                modalImg.style.display = 'block';
+                                modalImg.src = img.src;
+                                modalImg.alt = img.alt || 'Project image';
+                                
+                                // Mostrar el texto del proyecto
+                                const modalText = modal.querySelector('.modal-text');
+                                if (modalText && projectText) {
+                                    modalText.textContent = projectText;
+                                    modalText.style.display = 'block';
+                                } else if (modalText) {
+                                    modalText.style.display = 'none';
+                                }
+                                
+                                modal.classList.add('active');
+                                document.body.style.overflow = 'hidden';
+                            }
+                        }
+                    });
+                });
+            }
+            
+            // Setup inicial
+            setupImageClickHandlers();
+            
+            // Re-setup en resize por si cambia de móvil a desktop
+            window.addEventListener('resize', function() {
+                // Cerrar modal si se cambia a desktop
+                if (window.innerWidth > 768 && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+            
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                // Excluir las imágenes del modal del manejo de errores
+                if (img.closest('.fullscreen-modal')) {
+                    return;
+                }
+                
+                img.addEventListener('load', function() {
+                    this.classList.add('lazyloaded');
+                });
+                
+                img.addEventListener('error', function() {
+                    // No reemplazar imágenes de proyectos con placeholders
+                    if (!this.classList.contains('wp-block-cover__image-background')) {
+                        // Solo aplicar placeholder a imágenes que no sean de proyectos
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'image-placeholder';
+                        placeholder.style.width = this.width + 'px';
+                        placeholder.style.height = this.height + 'px';
+                        placeholder.textContent = 'Image not found';
+                        this.parentNode.replaceChild(placeholder, this);
+                    } else {
+                        // Para imágenes de proyectos, solo agregar una clase de error
+                        this.classList.add('image-error');
+                        console.warn('Failed to load project image:', this.src);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

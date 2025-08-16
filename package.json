@@ -1,0 +1,25 @@
+{
+  "name": "nieves-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Nieves Calvo - Architect, Interior Designer, Artist, Creative, and Explorer",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "bash -c 'source .env && wrangler deploy'",
+    "deploy:env": "bash -c 'export $(grep -v \"^#\" .env | xargs) && wrangler deploy'",
+    "preview": "wrangler dev --local",
+    "setup": "echo 'Please edit .env file with your Cloudflare API Token'"
+  },
+  "keywords": [
+    "portfolio",
+    "architecture",
+    "interior-design",
+    "cloudflare-worker",
+    "static-site"
+  ],
+  "author": "Nieves Calvo",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^4.30.0"
+  }
+}

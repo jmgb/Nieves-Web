@@ -1,0 +1,387 @@
+/* ============================================
+   PORTFOLIO NIEVES CALVO - CUSTOM STYLES
+   ============================================ */
+
+/* Variables CSS personalizadas */
+:root {
+  /* Colores principales */
+  --color-nieves-blue: #4169e1;
+  --color-nieves-gray: #808285;
+  --color-nieves-dark: #222222;
+  --color-border: #e5e7eb;
+  
+  /* Gradientes */
+  --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+  
+  /* Sombras */
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Transiciones */
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease-out;
+  --transition-slow: all 0.6s ease-out;
+  
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  
+  /* Tipografía */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Reset y configuración base */
+* {
+  box-sizing: border-box;
+}
+
+[x-cloak] { 
+  display: none !important; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilidades de animación */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.fade-in-delay {
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gradiente del hero */
+.hero-gradient {
+  background: var(--gradient-hero);
+  position: relative;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(65, 105, 225, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Estilos de navegación */
+.navbar {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos de tarjetas de proyecto */
+.project-card {
+  transition: var(--transition-base);
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(65, 105, 225, 0.2);
+}
+
+.project-card .card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .card-image img {
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.project-card .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-overlay);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* Botones personalizados */
+.btn-primary {
+  background: var(--color-nieves-blue);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-base);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: #3b5bdb;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(65, 105, 225, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-nieves-blue);
+  padding: 1rem 2rem;
+  border: 2px solid var(--color-nieves-blue);
+  border-radius: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-base);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: var(--color-nieves-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(65, 105, 225, 0.3);
+}
+
+/* Filtros de proyecto */
+.filter-button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: white;
+  color: var(--color-nieves-gray);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-base);
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  border-color: var(--color-nieves-blue);
+  color: var(--color-nieves-blue);
+  transform: translateY(-1px);
+}
+
+.filter-button.active {
+  background: var(--color-nieves-blue);
+  border-color: var(--color-nieves-blue);
+  color: white;
+  box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3);
+}
+
+/* Modal */
+.modal-backdrop {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-modal);
+}
+
+/* Scrollbar personalizada */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Efectos de texto */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-nieves-blue) 0%, #3b5bdb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Decoraciones geométricas */
+.geometric-decoration {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.geometric-decoration.blue {
+  background: linear-gradient(135deg, rgba(65, 105, 225, 0.1) 0%, rgba(59, 91, 219, 0.2) 100%);
+}
+
+.geometric-decoration.gray {
+  background: linear-gradient(135deg, rgba(128, 130, 133, 0.1) 0%, rgba(156, 163, 175, 0.1) 100%);
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .hero-gradient::before {
+    background: radial-gradient(circle at 50% 30%, rgba(65, 105, 225, 0.1) 0%, transparent 50%);
+  }
+  
+  .project-card:hover {
+    transform: none;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Estados de carga */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Mejoras de accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus states mejorados */
+button:focus,
+a:focus {
+  outline: 2px solid var(--color-nieves-blue);
+  outline-offset: 2px;
+}
+
+/* Animaciones al hacer scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estados de hover mejorados para dispositivos táctiles */
+@media (hover: hover) {
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .project-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
