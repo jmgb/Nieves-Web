@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "bash -c 'source .env && wrangler deploy'",
+    "deploy": "bash -c 'set -a && source .env && set +a && wrangler deploy'",
     "deploy:env": "bash -c 'export $(grep -v \"^#\" .env | xargs) && wrangler deploy'",
     "preview": "wrangler dev --local",
     "setup": "echo 'Please edit .env file with your Cloudflare API Token'"

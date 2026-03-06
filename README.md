@@ -189,14 +189,14 @@ python3 -m http.server 8000
 - **Archivos**: 66 archivos, 2,929 líneas
 - **Commits**: Inicial + .gitignore + robots.txt
 
-### Cloudflare Worker (DESPLEGADO) ✅
+### Cloudflare Worker (Producción actual) ✅
 ```bash
-# Despliegue actual con Worker
+# Despliegue actual (Cloudflare Worker)
 npm run deploy
 
 # URLs activas:
 # - https://nievescalvo.com (dominio personalizado)
-# - https://nieves-portfolio.jesus82c.workers.dev (worker directo)
+# - https://nieves-portfolio.jesus82c.workers.dev (workers.dev)
 ```
 
 **Estado del deployment:**
@@ -205,18 +205,8 @@ npm run deploy
 - ✅ Assets servidos desde GitHub (público)
 - ✅ Caché optimizado (1 día assets, 1 hora HTML)
 - ⏳ www.nievescalvo.com (pendiente configuración)
-
-### Cloudflare Pages (Alternativa)
-```bash
-# Usando Wrangler CLI
-wrangler pages create nieves-portfolio
-wrangler pages deploy . --project-name=nieves-portfolio
-```
-
-### Alternativas de Deployment
-- **Netlify**: Conectar repositorio GitHub para auto-deploy
-- **Vercel**: `npx vercel` desde la carpeta del proyecto  
-- **GitHub Pages**: Settings → Pages → Deploy from branch main
+- ✅ Modelo actual: este proyecto se despliega en **Cloudflare Worker** (no en Cloudflare Pages)
+- ⚠️ Importante: para publicar cambios de `index.html`/`assets`, primero hay que hacer `push` a `main` (el Worker lee contenido desde GitHub Raw)
 
 ## 🔍 SEO y Accesibilidad
 
