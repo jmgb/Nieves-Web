@@ -3,8 +3,8 @@
 
 const ASSET_PATH_PATTERN = /\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|webp)$/i;
 const HTML_CACHE_TTL = 3600;
-const ASSET_CACHE_TTL = 31536000;
-const ASSET_CACHE_CONTROL = 'public, max-age=31536000, immutable';
+const ASSET_CACHE_TTL = 86400;
+const ASSET_CACHE_CONTROL = `public, max-age=${ASSET_CACHE_TTL}`;
 const HTML_CACHE_CONTROL = `public, max-age=${HTML_CACHE_TTL}`;
 
 function buildAssetRequest(request, pathname) {

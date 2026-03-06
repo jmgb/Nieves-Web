@@ -8,7 +8,8 @@
     "deploy": "bash -c 'set -a && source .env && set +a && wrangler deploy'",
     "deploy:env": "bash -c 'export $(grep -v \"^#\" .env | xargs) && wrangler deploy'",
     "preview": "wrangler dev --local",
-    "setup": "echo 'Please edit .env file with your Cloudflare API Token'"
+    "setup": "echo 'Please edit .env file with your Cloudflare API Token'",
+    "lint": "eslint src tests"
   },
   "keywords": [
     "portfolio",
@@ -20,6 +21,9 @@
   "author": "Nieves Calvo",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
+    "globals": "^17.4.0",
     "wrangler": "^4.30.0"
   }
 }

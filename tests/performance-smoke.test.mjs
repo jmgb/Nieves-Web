@@ -29,6 +29,6 @@ test('below-the-fold images are lazy loaded', () => {
 });
 
 test('worker serves static assets with 1-day caching without immutable', () => {
-  assert.match(worker, /max-age=86400/);
+  assert.match(worker, /const ASSET_CACHE_TTL = 86400;/);
   assert.ok(!worker.includes('immutable'));
 });

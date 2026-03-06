@@ -122,6 +122,12 @@ portfolio-nieves/
 - **CSS**: Inline in HTML for performance
 - **Images**: Optimized with multiple responsive sizes
 
+### Cloudflare Worker Cache Policy
+- **HTML**: `Cache-Control: public, max-age=3600` (1 hour)
+- **Assets** (`/assets/*`, css/js/images/fonts): `Cache-Control: public, max-age=86400` (1 day)
+- **Do not use `immutable`** while assets keep stable filenames without hash/versioning
+- If an urgent visual/content update is needed before TTL expires, purge Cloudflare cache
+
 ## Language and Content
 
 - **Primary Language**: Spanish (`lang="es"`)
