@@ -1,14 +1,45 @@
 // Cloudflare Worker for Nieves Calvo Portfolio
-// Serves static files from GitHub repository
+// Serves bundled static assets from Cloudflare's edge.
 
-const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/jmgb/Nieves-Web/main';
+const ASSET_PATH_PATTERN = /\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|webp)$/i;
+const HTML_CACHE_TTL = 3600;
+const ASSET_CACHE_TTL = 31536000;
+const ASSET_CACHE_CONTROL = 'public, max-age=31536000, immutable';
+const HTML_CACHE_CONTROL = `public, max-age=${HTML_CACHE_TTL}`;
+
+function buildAssetRequest(request, pathname) {
+  const assetUrl = new URL(request.url);
+  assetUrl.pathname = pathname;
+  return new Request(assetUrl.toString(), request);
+}
+
+function withResponseHeaders(response, pathname) {
+  const headers = new Headers(response.headers);
+  const isAssetRequest = ASSET_PATH_PATTERN.test(pathname);
+
+  headers.set('Cache-Control', isAssetRequest ? ASSET_CACHE_CONTROL : HTML_CACHE_CONTROL);
+  headers.set('X-Content-Type-Options', 'nosniff');
+  headers.set('X-Frame-Options', 'SAMEORIGIN');
+  headers.set('X-XSS-Protection', '1; mode=block');
+  headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+
+  if (pathname.startsWith('/assets/')) {
+    headers.set('Access-Control-Allow-Origin', '*');
+    headers.set('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
+  }
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers
+  });
+}
 
 export default {
-  async fetch(request, env, ctx) {
+  async fetch(request, env) {
     const url = new URL(request.url);
     const pathname = url.pathname;
-    
-    // Handle CORS preflight requests
+
     if (request.method === 'OPTIONS') {
       return new Response(null, {
         status: 200,
@@ -20,110 +51,29 @@ export default {
         }
       });
     }
-    
+
     try {
-      let fileUrl;
-      
-      // Handle root path
-      if (pathname === '/' || pathname === '') {
-        fileUrl = `${GITHUB_RAW_BASE}/index.html`;
-      }
-      // Handle other paths
-      else {
-        fileUrl = `${GITHUB_RAW_BASE}${pathname}`;
-      }
-      
-      // Fetch file from GitHub
-      const response = await fetch(fileUrl, {
-        cf: {
-          // Cache in Cloudflare for 1 hour for HTML, 1 day for assets
-          cacheTtl: pathname.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|webp)$/) 
-            ? 86400 // 1 day for assets
-            : 3600, // 1 hour for HTML
-          cacheEverything: true
+      const assetPath = pathname === '/' || pathname === '' ? '/index.html' : pathname;
+      let response = await env.ASSETS.fetch(buildAssetRequest(request, assetPath));
+
+      if (response.status === 404 && !pathname.includes('.') && pathname !== '/') {
+        response = await env.ASSETS.fetch(buildAssetRequest(request, '/index.html'));
+        if (response.ok) {
+          return withResponseHeaders(response, '/index.html');
         }
-      });
-      
+      }
+
       if (!response.ok) {
-        // If not found and no extension, try serving index.html (SPA routing)
-        if (response.status === 404 && !pathname.includes('.') && pathname !== '/') {
-          const indexResponse = await fetch(`${GITHUB_RAW_BASE}/index.html`, {
-            cf: { cacheTtl: 3600, cacheEverything: true }
-          });
-          
-          if (indexResponse.ok) {
-            return new Response(indexResponse.body, {
-              status: 200,
-              headers: {
-                'Content-Type': 'text/html; charset=utf-8',
-                'Cache-Control': 'public, max-age=3600',
-                'X-Content-Type-Options': 'nosniff',
-                'X-Frame-Options': 'SAMEORIGIN',
-                'X-XSS-Protection': '1; mode=block',
-                'Referrer-Policy': 'strict-origin-when-cross-origin'
-              }
-            });
-          }
-        }
-        
-        return new Response(`Asset not found: ${pathname}`, { 
+        return new Response(`Asset not found: ${pathname}`, {
           status: 404,
           headers: { 'Content-Type': 'text/plain' }
         });
       }
-      
-      // Determine content type
-      let contentType = response.headers.get('content-type') || 'application/octet-stream';
-      
-      if (pathname.endsWith('.html') || pathname === '/') {
-        contentType = 'text/html; charset=utf-8';
-      } else if (pathname.endsWith('.css')) {
-        contentType = 'text/css';
-      } else if (pathname.endsWith('.js')) {
-        contentType = 'application/javascript';
-      } else if (pathname.endsWith('.jpg') || pathname.endsWith('.jpeg')) {
-        contentType = 'image/jpeg';
-      } else if (pathname.endsWith('.png')) {
-        contentType = 'image/png';
-      } else if (pathname.endsWith('.svg')) {
-        contentType = 'image/svg+xml';
-      } else if (pathname.endsWith('.ico')) {
-        contentType = 'image/x-icon';
-      } else if (pathname.endsWith('.webp')) {
-        contentType = 'image/webp';
-      } else if (pathname.endsWith('.xml')) {
-        contentType = 'application/xml';
-      } else if (pathname.endsWith('.txt')) {
-        contentType = 'text/plain';
-      }
-      
-      // Create response with proper headers
-      const newResponse = new Response(response.body, {
-        status: response.status,
-        statusText: response.statusText,
-        headers: {
-          'Content-Type': contentType,
-          'Cache-Control': pathname.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|webp)$/) 
-            ? 'public, max-age=86400' // 1 day for assets
-            : 'public, max-age=3600', // 1 hour for HTML
-          'X-Content-Type-Options': 'nosniff',
-          'X-Frame-Options': 'SAMEORIGIN',
-          'X-XSS-Protection': '1; mode=block',
-          'Referrer-Policy': 'strict-origin-when-cross-origin'
-        }
-      });
-      
-      // CORS for assets
-      if (pathname.startsWith('/assets/')) {
-        newResponse.headers.set('Access-Control-Allow-Origin', '*');
-        newResponse.headers.set('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS');
-      }
-      
-      return newResponse;
-      
+
+      return withResponseHeaders(response, assetPath);
     } catch (error) {
       console.error('Worker error:', error);
-      return new Response(`Error serving content: ${error.message}`, { 
+      return new Response(`Error serving content: ${error.message}`, {
         status: 500,
         headers: { 'Content-Type': 'text/plain' }
       });
