@@ -34,6 +34,7 @@ The site uses a **hybrid approach** combining modern responsive design with pres
 2. **Progressive Enhancement**: Works without JavaScript, enhanced with dynamic features
 3. **Mobile-First Responsive**: Custom CSS with Instagram-style mobile layout
 4. **SEO Optimized**: Maintains WordPress sitemaps and meta structure
+5. **Cloudflare Worker + Local Assets**: `src/index.js` serves files through `env.ASSETS` (configured in `wrangler.toml`)
 
 ### Key Technical Implementation
 
@@ -87,6 +88,16 @@ portfolio-nieves/
 
 ## Common Maintenance Tasks
 
+### Cloudflare Deployment (Current)
+1. Ensure `CLOUDFLARE_API_TOKEN` is present in `.env`
+2. Deploy with `npm run deploy`
+3. Verify Worker URL and spot-check homepage/project images
+
+### Asset Source of Truth
+- Serve static files from local repository assets via Worker `env.ASSETS` (not from external GitHub raw URLs)
+- Keep project media under `assets/images/projects/...`
+- Keep references in `index.html` as relative paths (e.g. `assets/images/...`)
+
 ### Adding New Projects
 1. Update `mapa-proyectos.md` with new project details
 2. Add project section to `index.html` following existing pattern
@@ -127,6 +138,12 @@ portfolio-nieves/
 - **Assets** (`/assets/*`, css/js/images/fonts): `Cache-Control: public, max-age=86400` (1 day)
 - **Do not use `immutable`** while assets keep stable filenames without hash/versioning
 - If an urgent visual/content update is needed before TTL expires, purge Cloudflare cache
+
+### Performance Guardrails (Must Keep)
+- Keep critical hero image optimized and prioritized (`fetchpriority="high"` and `loading="eager"` only for above-the-fold image)
+- Keep below-the-fold project images as `loading="lazy"`
+- Do not reintroduce HTML meta no-cache tags (`Cache-Control`, `Pragma`, `Expires`) because they hurt repeat-load performance
+- Validate with `node --test tests/performance-smoke.test.mjs` after performance-related changes
 
 ## Language and Content
 
