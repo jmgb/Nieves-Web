@@ -191,7 +191,7 @@ python3 -m http.server 8000
 
 ### Cloudflare Worker (Producción actual) ✅
 ```bash
-# Despliegue actual (Cloudflare Worker)
+# Despliegue manual
 npm run deploy
 
 # URLs activas:
@@ -199,15 +199,22 @@ npm run deploy
 # - https://nieves-portfolio.jesus82c.workers.dev (workers.dev)
 ```
 
+```bash
+# Auto-deploy
+git push origin main
+```
+
 **Estado del deployment:**
 - ✅ Worker desplegado y funcionando
 - ✅ Dominio personalizado: `https://nievescalvo.com`
 - ✅ Assets servidos desde el repo local empaquetado por Cloudflare Workers
 - ✅ Caché optimizado (1 día assets, 1 hora HTML)
+- ✅ Auto-deploy por GitHub Actions en push a `main`
 - ⏳ www.nievescalvo.com (pendiente configuración)
 - ✅ Modelo actual: este proyecto se despliega en **Cloudflare Worker** (no en Cloudflare Pages)
-- ⚠️ Importante: para publicar cambios no hace falta `push` a `main`; el deploy sale desde este checkout con `npm run deploy`
+- ⚠️ Importante: el camino normal de publicación es `git push origin main`; `npm run deploy` queda como respaldo manual
 - ⚠️ Importante: mantener `.assetsignore` como allowlist para no publicar archivos internos al usar `assets = { directory = \".\" }`
+- ⚠️ Requisito: el repo debe tener el secreto `CLOUDFLARE_API_TOKEN` en GitHub Actions
 
 ## 🔍 SEO y Accesibilidad
 

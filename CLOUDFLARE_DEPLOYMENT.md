@@ -8,6 +8,8 @@ URLs activas documentadas:
 - `https://nievescalvo.com` (dominio personalizado)
 - `https://nieves-portfolio.jesus82c.workers.dev` (workers.dev)
 
+El repositorio ya incluye auto-deploy por **GitHub Actions** en cada push a `main`, siempre que el secreto `CLOUDFLARE_API_TOKEN` esté configurado en GitHub.
+
 ## Flujo rapido recomendado (futuro)
 
 1. Confirmar cambios locales:
@@ -48,6 +50,15 @@ Alternativa temporal:
 export CLOUDFLARE_API_TOKEN="tu_token_real_aqui"
 ```
 
+### 1.1. Secreto de GitHub Actions
+
+Para que el auto-deploy funcione en GitHub:
+
+1. Ir a `GitHub > Settings > Secrets and variables > Actions`
+2. Crear el secreto:
+   - `CLOUDFLARE_API_TOKEN`
+3. Usar un token con permisos de Workers deploy para la cuenta correcta
+
 ### 2. Account ID en `wrangler.toml`
 
 La configuración actual está en el nivel raíz (no en `[env.production]`):
@@ -60,6 +71,16 @@ account_id = "tu_account_id_aqui"
 ```
 
 ## Deploy
+
+### Auto-deploy por GitHub Actions
+
+- Archivo: `.github/workflows/deploy.yml`
+- Trigger: cada push a `main`
+- Trigger adicional: ejecución manual con `workflow_dispatch`
+- Flujo:
+  - `npm ci`
+  - `node --test tests/*.mjs`
+  - `npx wrangler deploy`
 
 ```bash
 # Instalar dependencias
@@ -140,6 +161,9 @@ Si el HTML o los assets no cambian enseguida:
 ## Comandos rápidos
 
 ```bash
+# Auto-deploy por push a main
+git push origin main
+
 # Desarrollo local
 npm run dev
 

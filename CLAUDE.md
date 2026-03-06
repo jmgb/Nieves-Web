@@ -90,15 +90,17 @@ portfolio-nieves/
 
 ### Cloudflare Deployment (Current)
 1. Ensure `CLOUDFLARE_API_TOKEN` is present in `.env`
-2. Deploy with `npm run deploy`
-3. Verify Worker URL and spot-check homepage/project images
-4. Keep `.assetsignore` updated because `wrangler.toml` serves assets from repo root (`assets = { directory = "." }`)
+2. GitHub Actions auto-deploys on every push to `main` using `.github/workflows/deploy.yml`
+3. Keep `CLOUDFLARE_API_TOKEN` configured as a GitHub Actions secret
+4. `npm run deploy` remains the manual fallback deploy path
+5. Verify Worker URL and spot-check homepage/project images
+6. Keep `.assetsignore` updated because `wrangler.toml` serves assets from repo root (`assets = { directory = "." }`)
 
 ### Asset Source of Truth
 - Serve static files from local repository assets via Worker `env.ASSETS` (not from external GitHub raw URLs)
 - Keep project media under `assets/images/projects/...`
 - Keep references in `index.html` as relative paths (e.g. `assets/images/...`)
-- Never rely on `push` to `main` alone for production updates; production changes only after `npm run deploy`
+- Pushing to `main` should trigger production deploy via GitHub Actions when secrets are configured correctly
 
 ### Adding New Projects
 1. Update `mapa-proyectos.md` with new project details
