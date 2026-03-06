@@ -202,11 +202,12 @@ npm run deploy
 **Estado del deployment:**
 - ✅ Worker desplegado y funcionando
 - ✅ Dominio personalizado: `https://nievescalvo.com`
-- ✅ Assets servidos desde GitHub (público)
+- ✅ Assets servidos desde el repo local empaquetado por Cloudflare Workers
 - ✅ Caché optimizado (1 día assets, 1 hora HTML)
 - ⏳ www.nievescalvo.com (pendiente configuración)
 - ✅ Modelo actual: este proyecto se despliega en **Cloudflare Worker** (no en Cloudflare Pages)
-- ⚠️ Importante: para publicar cambios de `index.html`/`assets`, primero hay que hacer `push` a `main` (el Worker lee contenido desde GitHub Raw)
+- ⚠️ Importante: para publicar cambios no hace falta `push` a `main`; el deploy sale desde este checkout con `npm run deploy`
+- ⚠️ Importante: mantener `.assetsignore` como allowlist para no publicar archivos internos al usar `assets = { directory = \".\" }`
 
 ## 🔍 SEO y Accesibilidad
 

@@ -1,0 +1,10 @@
+*
+!index.html
+!favicon.ico
+!robots.txt
+!sitemap.xml
+!sitemap_index.xml
+!page-sitemap.xml
+!main-sitemap.xsl
+!assets/
+!assets/**

@@ -12,12 +12,14 @@ URLs activas documentadas:
 
 1. Confirmar cambios locales:
    - `git status`
-2. Si cambiaste contenido estatico (`index.html`, `assets/`, `robots.txt`, `sitemap.xml`), hacer commit + push a `main`:
-   - El Worker actual lee archivos desde `https://raw.githubusercontent.com/jmgb/Nieves-Web/main`.
-3. Desplegar Worker:
+2. Instalar dependencias si hace falta:
+   - `npm install`
+3. Desplegar Worker desde este checkout local:
    - `npm run deploy`
-4. Verificar que el deploy salio bien:
-   - `curl -s https://nieves-portfolio.jesus82c.workers.dev | head`
+4. Verificar que producción refleja exactamente el contenido local:
+   - `sha256sum index.html`
+   - `curl -sL https://nievescalvo.com/ | sha256sum`
+   - `curl -sL https://nieves-portfolio.jesus82c.workers.dev/ | sha256sum`
 5. (Opcional) Revisar logs:
    - `wrangler tail`
 
@@ -26,6 +28,7 @@ URLs activas documentadas:
 - `wrangler.toml` - Configuración del Worker
 - `src/index.js` - Handler `fetch` del Worker
 - `package.json` - Scripts de desarrollo y deploy
+- `.assetsignore` - Allowlist de archivos públicos que sí deben subirse como assets
 
 ## Configuración mínima
 
@@ -81,12 +84,32 @@ npm run preview
 
 ## Qué hace el Worker actual
 
-- Sirve contenido desde `https://raw.githubusercontent.com/jmgb/Nieves-Web/main`
+- Sirve archivos estáticos locales del repositorio a través de `env.ASSETS`
 - Soporta fallback SPA a `index.html` cuando una ruta no existe
 - Aplica headers de seguridad
 - Cachea:
   - Assets estáticos: 1 día (`max-age=86400`)
   - HTML: 1 hora (`max-age=3600`)
+
+## Assets públicos
+
+El proyecto usa:
+
+```toml
+assets = { directory = "." }
+```
+
+Como el directorio de assets es la raíz del repo, es obligatorio mantener una allowlist en `.assetsignore` para evitar que Cloudflare publique archivos internos como dependencias, tooling, caches o documentación.
+
+Los archivos públicos esperados son:
+- `index.html`
+- `favicon.ico`
+- `robots.txt`
+- `sitemap.xml`
+- `sitemap_index.xml`
+- `page-sitemap.xml`
+- `main-sitemap.xsl`
+- `assets/**`
 
 ## Troubleshooting
 
@@ -98,12 +121,21 @@ npm run preview
 
 ### Error: `Asset not found`
 - Revisar la ruta solicitada en URL.
-- Verificar que el archivo exista en el repositorio (`main`) que consume el Worker.
+- Verificar que el archivo exista en el repo local y no esté excluido por `.assetsignore`.
+
+### Error: `Asset too large`
+- Suele ocurrir si `assets.directory = "."` intenta subir `node_modules`, `.wrangler`, PDFs o archivos internos.
+- Revisar `.assetsignore` y mantenerlo como allowlist de archivos públicos.
 
 ### El Worker no refleja cambios
 ```bash
 wrangler deploy --compatibility-date 2024-08-16
 ```
+
+Si el HTML o los assets no cambian enseguida:
+- comparar hashes entre local y las dos URLs públicas
+- revisar `Cache-Control`
+- purgar caché en Cloudflare si hace falta una actualización visual inmediata
 
 ## Comandos rápidos
 

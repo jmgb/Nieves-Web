@@ -92,11 +92,13 @@ portfolio-nieves/
 1. Ensure `CLOUDFLARE_API_TOKEN` is present in `.env`
 2. Deploy with `npm run deploy`
 3. Verify Worker URL and spot-check homepage/project images
+4. Keep `.assetsignore` updated because `wrangler.toml` serves assets from repo root (`assets = { directory = "." }`)
 
 ### Asset Source of Truth
 - Serve static files from local repository assets via Worker `env.ASSETS` (not from external GitHub raw URLs)
 - Keep project media under `assets/images/projects/...`
 - Keep references in `index.html` as relative paths (e.g. `assets/images/...`)
+- Never rely on `push` to `main` alone for production updates; production changes only after `npm run deploy`
 
 ### Adding New Projects
 1. Update `mapa-proyectos.md` with new project details
