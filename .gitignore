@@ -38,3 +38,6 @@ package-lock.json
 # Build outputs
 dist/
 build/
+
+# Symlink a doc personal fuera del repo
+SUPABASE_ACCOUNTS.md
