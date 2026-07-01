@@ -1,0 +1,16 @@
+# Nieves Calvo
+
+> Portfolio site of Nieves Calvo — architect and interior designer focused on high-end residential and hospitality projects, working between Miami and Madrid.
+
+Nieves Calvo is the founder and creative director of The Intangible Land, an architect and interior designer focused on high-end residential and hospitality projects. Her work emphasizes attention to detail and sustainability, finding a balance between new trends and timeless design. She has collaborated with firms such as ICRAVE and HBA (gaining experience with brands including Ritz-Carlton and Hilton), and in 2018 joined the teams of Enrique Norten and Andrea Steele Architecture in New York City. She studied and worked in Madrid (Spain) and Bordeaux (France) on international projects that received honors such as the 2018 FAD Interiorisme Award and a nomination for the Mies van der Rohe Awards.
+
+This is a single-page portfolio. The links below point to sections of the homepage.
+
+## Sections
+
+- [About](https://nievescalvo.com/#about): biography of Nieves Calvo — architect and interior designer, founder and creative director of The Intangible Land, and her collaborations with firms such as ICRAVE, HBA, and TEN / ASA architects.
+- [Portfolio](https://nievescalvo.com/#portfolio): 17 architecture and interior design projects, filterable by category — Luxury Hospitality (e.g. Burj Azizi Dubai, Ritz-Carlton Aruba, Hilton Punta Cana, Dream Hotel Miami), Corporate & Financial (Chase Sapphire Lounges, JP Morgan projects), Gastronomy & Culture (ROMOLA and Runrunrun restaurants in Madrid), Innovation & Public (NASA Glenn Research Center, IED Innovation Lab, MRNY Community Center, NYC Taxi and Limousine Commission), and Design & Experimental (XU Collective, Rambla Climate House, Ecosistemas Emocionales, AMC).
+
+## Optional
+
+- [Contact](https://nievescalvo.com/#contact): get in touch at hi@nievescalvo.com.
