@@ -13,7 +13,7 @@ function srcForAlt(alt) {
 }
 
 test('wrangler is configured to serve bundled static assets', () => {
-  assert.match(wrangler, /assets\s*=\s*\{\s*directory\s*=\s*"\."\s*\}/i);
+  assert.match(wrangler, /assets\s*=\s*\{\s*directory\s*=\s*"\."\s*,\s*binding\s*=\s*"ASSETS"\s*\}/i);
 });
 
 test('worker uses Cloudflare ASSETS binding instead of GitHub raw', () => {
