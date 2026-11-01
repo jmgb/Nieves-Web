@@ -189,32 +189,14 @@ python3 -m http.server 8000
 - **Archivos**: 66 archivos, 2,929 líneas
 - **Commits**: Inicial + .gitignore + robots.txt
 
-### Cloudflare Worker (Producción actual) ✅
-```bash
-# Despliegue manual
-npm run deploy
+### Cloudflare Worker (publicación manual con revisión de Root)
 
-# URLs activas:
-# - https://nievescalvo.com (dominio personalizado)
-# - https://nieves-portfolio.jesus82c.workers.dev (workers.dev)
-```
-
-```bash
-# Auto-deploy
-git push origin main
-```
-
-**Estado del deployment:**
-- ✅ Worker desplegado y funcionando
-- ✅ Dominio personalizado: `https://nievescalvo.com`
-- ✅ Assets servidos desde el repo local empaquetado por Cloudflare Workers
-- ✅ Caché optimizado (1 día assets, 1 hora HTML)
-- ✅ Auto-deploy por GitHub Actions en push a `main`
-- ⏳ www.nievescalvo.com (pendiente configuración)
-- ✅ Modelo actual: este proyecto se despliega en **Cloudflare Worker** (no en Cloudflare Pages)
-- ⚠️ Importante: el camino normal de publicación es `git push origin main`; `npm run deploy` queda como respaldo manual
-- ⚠️ Importante: mantener `.assetsignore` como allowlist para no publicar archivos internos al usar `assets = { directory = \".\" }`
-- ⚠️ Requisito: el repo debe tener el secreto `CLOUDFLARE_API_TOKEN` en GitHub Actions
+- URLs documentadas: `https://nievescalvo.com` y `https://nieves-portfolio.jesus82c.workers.dev`.
+- GitHub Actions ejecuta pruebas/lint y crea un artefacto `worker-review-<sha>`; no tiene credenciales Cloudflare ni publica cambios.
+- Root revisa el SHA del código y el checksum del artefacto antes de una publicación manual fuera de GitHub Actions.
+- Las credenciales de publicación deben permanecer en el entorno confiable del publicador Root, fuera de GitHub Actions y del repositorio.
+- Mantener `.assetsignore` como allowlist porque `wrangler.toml` sirve los assets desde la raíz (`assets = { directory = "." }`).
+- `git push origin main` solo ejecuta calidad y genera el artefacto de revisión; no despliega a producción.
 
 ## 🔍 SEO y Accesibilidad
 

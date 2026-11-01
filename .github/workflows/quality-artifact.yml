@@ -1,0 +1,75 @@
+name: Quality and Worker review artifact
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: worker-review-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality-and-artifact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Run tests
+        run: node --test tests/*.mjs
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Package exact Worker source for Root review
+        env:
+          ARTIFACT_DIR: ${{ runner.temp }}/worker-review
+        run: |
+          set -eu
+          mkdir -p "$ARTIFACT_DIR"
+          source_date_epoch="$(git show -s --format=%ct "$GITHUB_SHA")"
+          printf '%s\n' "$GITHUB_SHA" > "$ARTIFACT_DIR/source-sha.txt"
+          tar --sort=name --mtime="@$source_date_epoch" --owner=0 --group=0 --numeric-owner \
+            -czf "$ARTIFACT_DIR/worker-source.tar.gz" \
+            .assetsignore \
+            favicon.ico \
+            index.html \
+            llms.txt \
+            main-sitemap.xsl \
+            page-sitemap.xml \
+            robots.txt \
+            sitemap.xml \
+            sitemap_index.xml \
+            assets \
+            src/index.js \
+            wrangler.toml
+          (cd "$ARTIFACT_DIR" && sha256sum worker-source.tar.gz > worker-source.tar.gz.sha256)
+
+      - name: Upload Worker review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: worker-review-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/worker-review/source-sha.txt
+            ${{ runner.temp }}/worker-review/worker-source.tar.gz
+            ${{ runner.temp }}/worker-review/worker-source.tar.gz.sha256
+          if-no-files-found: error
+          retention-days: 14
