@@ -177,3 +177,7 @@ Tras una feature/cambio **relevante**, lanzar automáticamente `/codex:review --
 **Si hay hallazgos serios**: `/codex:rescue --resume "aplica los fixes propuestos"` antes de commit.
 
 **Features grandes con commits incrementales**: una sola review al cerrar la feature con `--scope branch --base main`; los fixes van en un commit final "address codex review" antes del push.
+
+## Secretos
+
+Leer o ver un secreto en una sesión no obliga a rotarlo. Se rotan cada 90 días para minimizar riesgos, salvo que se expongan en un sitio público o a terceros o queden invalidados: entonces, en el momento.
