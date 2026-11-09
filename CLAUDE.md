@@ -88,19 +88,17 @@ portfolio-nieves/
 
 ## Common Maintenance Tasks
 
-### Cloudflare Deployment (Current)
-1. Ensure `CLOUDFLARE_API_TOKEN` is present in `.env`
-2. GitHub Actions auto-deploys on every push to `main` using `.github/workflows/deploy.yml`
-3. Keep `CLOUDFLARE_API_TOKEN` configured as a GitHub Actions secret
-4. `npm run deploy` remains the manual fallback deploy path
-5. Verify Worker URL and spot-check homepage/project images
-6. Keep `.assetsignore` updated because `wrangler.toml` serves assets from repo root (`assets = { directory = "." }`)
+### Cloudflare Deployment (Root-reviewed and manual)
+- `.github/workflows/quality-artifact.yml` runs tests/lint and packages the exact Worker source for review; it has no Cloudflare credentials and does not publish.
+- A push to `main` creates a short-lived `worker-review-<sha>` artifact. It contains the source SHA, a checksum, the Worker entry point/configuration, and the allowlisted static assets.
+- Production publication is a separate Root-only operation outside GitHub Actions, after Root reviews the exact source SHA and artifact checksum. Keep publishing credentials outside GitHub Actions and this repository.
+- Keep `.assetsignore` updated because `wrangler.toml` serves assets from repo root (`assets = { directory = "." }`).
 
 ### Asset Source of Truth
 - Serve static files from local repository assets via Worker `env.ASSETS` (not from external GitHub raw URLs)
 - Keep project media under `assets/images/projects/...`
 - Keep references in `index.html` as relative paths (e.g. `assets/images/...`)
-- Pushing to `main` should trigger production deploy via GitHub Actions when secrets are configured correctly
+- Pushing to `main` should trigger quality checks and a review artifact only; it must not publish to production
 
 ### Adding New Projects
 1. Update `mapa-proyectos.md` with new project details
